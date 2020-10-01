@@ -4,13 +4,21 @@
 
 # Description of response
 
-type Rams {
+# type Rams {
+#     name: String!,
+#     age: Int!,
+#     gender: String!
+# };
+
+type Person {
+    id: String!,
     name: String!,
     age: Int!,
     gender: String!
-};
-
+}
 
 type Query {
-    person: Rams!
-};
+    # person: Rams!
+    people: [Person]!
+    person(id: Int!): Person
+}

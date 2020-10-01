@@ -1,15 +1,26 @@
 // Query를 해결 하는 곳
 // Resolver를 DB에 연결하는 등 다양한 작업을 서술 해줄 수 있다. 
 
-const rams = {
-    name: "rams",
-    age: 28,
-    gender: "male"
-}
+// const rams = {
+//     name: "rams",
+//     age: 28,
+//     gender: "male"
+// }
+
+import { people, getById } from "./db"
 
 const resolvers = {
     Query: {
-        person: () => rams
+        // person: () => rams
+        people: () => people,
+        // person: (_, args)로 아래 형태의 쿼리를 진행 하면, args로 id값이 온다 (  '{ id: 2 }' 형식으로 ) 
+        // query {
+        //   person(id:2) {
+        //     name
+        //   }
+        // }
+        person: (_, { id }) => getById(id)
+        // person()
     }
 };
 
