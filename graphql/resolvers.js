@@ -7,27 +7,28 @@
 //     gender: "male"
 // }
 
-import { people, getPersonById, getMovies, getMovieById, addMovie, deleteMovies } from "./db"
+// import { people, getPersonById, getMovies, getMovieById, addMovie, deleteMovies } from "./db"
+import { getMovies } from "./db"
 
 const resolvers = {
     Query: {
         // person: () => rams
-        people: () => people,
+        // people: () => people,
         // person: (_, args)로 아래 형태의 쿼리를 진행 하면, args로 id값이 온다 (  '{ id: 2 }' 형식으로 ) 
         // query {
         //   person(id:2) {
         //     name
         //   }
         // }
-        person: (_, { id }) => getPersonById(id),
+        // person: (_, { id }) => getPersonById(id),
         // person()
-        movies: () => getMovies(),
-        movie: (_, { id }) => getMovieById(id),
+        movies: (_, {limit, rating}) => getMovies(limit, rating),
+        // movie: (_, { id }) => getMovieById(id),
     },
-    Mutation: {
-        addMovie: (_, {name, score}) => addMovie(name, score),
-        deleteMovie: (_, {id}) => deleteMovies(id)
-    }
+    // Mutation: {
+    //     addMovie: (_, {name, score}) => addMovie(name, score),
+    //     deleteMovie: (_, {id}) => deleteMovies(id)
+    // }
 };
 
 export default resolvers;

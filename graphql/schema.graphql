@@ -10,28 +10,37 @@
 #     gender: String!
 # };
 
-type Person {
-    id: String!,
-    name: String!,
-    age: Int!,
-    gender: String!
-}
+# type Person {
+#     id: String!,
+#     name: String!,
+#     age: Int!,
+#     gender: String!
+# }
+
+# type Movie {
+#     id: Int!
+#     name: String!
+#     score: Int!
+# }
 
 type Movie {
     id: Int!
-    name: String!
-    score: Int!
+    title: String!
+    rating: Float!
+    summary: String!
+    language: String!
+    medium_cover_image: String!
 }
 
 type Query {
     # person: Rams!
-    people: [Person]!
-    person(id: Int!): Person
-    movies: [Movie]!
-    movie(id: Int!): Movie
+    # people: [Person]!
+    # person(id: Int!): Person
+    movies(limit: Int, rating: Float): [Movie]!
+    # movie(id: Int!): Movie
 }
 
-type Mutation {
-    addMovie(name: String!, score: Int!): Movie!
-    deleteMovie(id: Int!): Boolean
-}
+# type Mutation {
+#     addMovie(name: String!, score: Int!): Movie!
+#     deleteMovie(id: Int!): Boolean
+# }
