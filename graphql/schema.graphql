@@ -3,6 +3,14 @@
 # mutation -> 정보를 변형 할 때 ( DB나 메모리의 )
 
 # Description of response
+
+type Rams {
+    name: String!,
+    age: Int!,
+    gender: String!
+};
+
+
 type Query {
-    name: String!
-}
+    person: Rams!
+};
