@@ -1,0 +1,9 @@
+{
+  "name": "NodeJS-GraphQL-Study",
+  "version": "1.0.0",
+  "description": "Movie api with GraphQL",
+  "main": "index.js",
+  "repository": "https://github.com/kangraemin/NodeJS-GraphQL-Study",
+  "author": "kangraemin <remin1994@gmail.com>",
+  "license": "MIT"
+}
