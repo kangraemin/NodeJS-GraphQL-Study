@@ -7,7 +7,7 @@
 //     gender: "male"
 // }
 
-import { people, getById } from "./db"
+import { people, getPersonById, getMovies, getMovieById, addMovie } from "./db"
 
 const resolvers = {
     Query: {
@@ -19,8 +19,13 @@ const resolvers = {
         //     name
         //   }
         // }
-        person: (_, { id }) => getById(id)
+        person: (_, { id }) => getPersonById(id),
         // person()
+        movies: () => getMovies(),
+        movie: (_, { id }) => getMovieById(id),
+    },
+    Mutation: {
+        addMovie: (_, {name, score}) => addMovie(name, score)
     }
 };
 
